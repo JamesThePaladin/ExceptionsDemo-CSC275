@@ -4,6 +4,7 @@
 
 using namespace std;
 
+// Displays information about the program and how to use it
 void DisplayInfo() 
 {
 	cout << "Welcome to Simple Additions!" << endl;
@@ -12,6 +13,7 @@ void DisplayInfo()
 	cout << "Have a great time and enjoy!" << endl;
 }
 
+// Adds two numbers together
 int AddNumbers(int a, int b) 
 {
 	int result = a + b;
