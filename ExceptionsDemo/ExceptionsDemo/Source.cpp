@@ -9,29 +9,31 @@ int main()
 	string line;
 	ifstream infile("example.txt");
 	ofstream outfile("output.txt");
-
-	if (infile.is_open()) 
+	try
 	{
-		if (outfile.is_open()) 
+		if (infile.is_open())
+			//throw "input file does not exist - TRY/CATCH";
 		{
-			while (getline(infile, line)) 
+			if (outfile.is_open())
 			{
-				cout << line << endl;
-				outfile << line << endl;
+				while (getline(infile, line))
+				{
+					cout << line << endl;
+					outfile << line << endl;
+				}
+				infile.close();
+				outfile.close();
+			} // end of if outfile
+			else
+			{
+				cout << "unable to open output file." << endl;
 			}
-			infile.close();
-			outfile.close();
-		}//end of if outfile
-		else 
-		{
-			cout << "unable to open output file." << endl;
-		}
-	} //end of if infile
-	else 
+		} // end of if infile
+	} // end of try
+	catch (const char* msg) 
 	{
-		cout << "unable to open input file." << endl;
-	}// end of else infile
-
+		cout << msg << endl;
+	} // end of catch
 	system("pause");
 	return 0;
-} //end main
+} // end main
