@@ -12,10 +12,16 @@ int main()
 	int secondNumber;
 	int result;
 	DisplayInfo();
-	firstNumber = askNumber("What is the first number to add?");
-	secondNumber = askNumber("What is the second number to add?");
-	result = AddNumbers(firstNumber, secondNumber);
-	cout << "The result is: " << result << endl;
+	try
+	{
+		firstNumber = askNumber("What is the first number to add? ");
+		secondNumber = askNumber("What is the second number to add? ");
+		result = AddNumbers(firstNumber, secondNumber);
+		cout << "The result is: " << result << endl;
+	}
+	catch () 
+	{
 
+	}
 	return 0;
 } // end main
